@@ -1,5 +1,12 @@
-<body>
+<div style="background: inherit">
+  <p>
+    <mat-toolbar color="primary">
+      <form [formGroup]="formGroup">
+        <mat-slide-toggle formControlName="switchTheme" color="accent">Tema</mat-slide-toggle>
+      </form>
+    </mat-toolbar>
+  </p>
   <div class="container">
     <router-outlet></router-outlet>
   </div>
-</body>
+</div>
