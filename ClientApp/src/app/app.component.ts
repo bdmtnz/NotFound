@@ -1,6 +1,7 @@
-import { Component, HostBinding, OnInit } from '@angular/core'; //CORE
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core'; //CORE
 import { FormBuilder, FormGroup } from '@angular/forms'; //REACTIVOS
 import { OverlayContainer } from '@angular/cdk/overlay'; //THEMES
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,9 @@ import { OverlayContainer } from '@angular/cdk/overlay'; //THEMES
 export class AppComponent implements OnInit{
   title = 'app';
   @HostBinding('class') componentCssClass : any;
-  formGroup: FormGroup;
+  form: FormGroup;
   over:OverlayContainer;
+  switch:boolean;
 
   constructor(over:OverlayContainer, formBuilder:FormBuilder) 
   {
@@ -19,24 +21,27 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.formGroup.controls.switchTheme.valueChanges.subscribe(
+    this.form.controls.switchTheme.valueChanges.subscribe(
       data => {
+        this.switch = data;
         this.onSetTheme(data);
       }
     );
   }
 
+  controls(){
+    return this.form.controls;
+  }
+
   private build(fb:FormBuilder){
-    this.formGroup = fb.group({
-      switchTheme: true,
+    this.form = fb.group({
+      switchTheme: this.switch,
     });
   }
   
-
-  public onSetTheme(o:boolean){
-    console.log(o?'light-theme':'dark-theme');
-    this.over.getContainerElement().classList.add(o?'light-theme':'dark-theme');
-    this.componentCssClass = o?'light-theme':'dark-theme';
+  private onSetTheme(o:boolean){
+    this.over.getContainerElement().classList.add(o?'dark-theme':'light-theme');
+    this.componentCssClass = o?'dark-theme':'light-theme';
   }
 
 }

@@ -30,12 +30,12 @@ $dark-theme: mat-dark-theme((
     @include angular-material-theme($light-theme);
     background: rgb(230, 230, 230);
     color: rgb(50, 50, 50);
-    transition: 2s;
+    transition: 1s;
 }
 
 .dark-theme{
     @include angular-material-theme($dark-theme);
     background: rgb(50, 50, 50);
     color: rgb(230, 230, 230);
-    transition: 2s;
+    transition: 1s;
 }

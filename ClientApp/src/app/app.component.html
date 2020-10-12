@@ -1,8 +1,13 @@
 <div style="background: inherit">
   <p>
     <mat-toolbar color="primary">
-      <form [formGroup]="formGroup">
-        <mat-slide-toggle formControlName="switchTheme" color="accent">Tema</mat-slide-toggle>
+      <span class="font-12">Bryan´s Snippet</span>
+      <span class="example-spacer"></span>
+      <form [formGroup]="form">
+        <mat-slide-toggle formControlName="switchTheme">
+          <mat-icon *ngIf="!switch">wb_sunny</mat-icon>
+          <mat-icon *ngIf="switch">brightness_2</mat-icon>
+        </mat-slide-toggle>
       </form>
     </mat-toolbar>
   </p>
