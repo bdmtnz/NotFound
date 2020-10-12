@@ -28,7 +28,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Add Routing File
 
-ng generate module app-routing --flat --module=app
+ng generate module app-routing --flat --module app
+
+## Add Module File
+
+To add module into a component for activate Lazy Load
+
+ng generate module app --flat
 
 ## Add Angular Material
 

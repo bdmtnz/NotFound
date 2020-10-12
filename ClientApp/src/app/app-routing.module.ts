@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 //import { HomeComponent } from './cpts/home/home.component';
 
 const routes: Routes = [
@@ -18,8 +18,13 @@ const routes: Routes = [
   }
 ];
 
+//PreloadStrategy: para precargar modulos especificos y en base a una bandera que lee un servicio
+//PreloadAllModules: precarga luego de haber hecho la carga inicial todos los modulos
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    enableTracing: false,
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
