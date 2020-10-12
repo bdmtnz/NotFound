@@ -12,14 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './cpts/home/home.component';
-import { NopathComponent } from './cpts/nopath/nopath.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    NopathComponent
+    AppComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
