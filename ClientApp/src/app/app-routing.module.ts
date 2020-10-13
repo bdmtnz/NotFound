@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-//import { HomeComponent } from './cpts/home/home.component';
+//import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   //{ path: 'home', component: HomeComponent },
   { 
     path: '', 
     loadChildren: () => { 
-      return import('./cpts/home/home.module').then(m => m.HomeModule);
+      return import('./components/home/home.module').then(m => m.HomeModule);
     }
   },
   { 
     path: '**',
     loadChildren: () => {
-      return import('./cpts/nopath/nopath.module').then(m => m.NopathModule);
+      return import('./components/nopath/nopath.module').then(m => m.NopathModule);
     }
   }
 ];
