@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+import { CacheService } from 'src/app/services/cache.service';
 
 @Component({
   selector: 'app-infinite',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfiniteComponent implements OnInit {
 
-  constructor() { }
+  cache:CacheService;
+
+  constructor(private _cache:CacheService) { 
+    this.cache = _cache;
+  }
 
   ngOnInit(): void {
   }
