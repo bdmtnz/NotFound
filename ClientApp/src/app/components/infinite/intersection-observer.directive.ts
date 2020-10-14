@@ -25,7 +25,7 @@ export class IntersectionObserverDirective implements OnInit {
 
   private options: IntersectionObserverInit = {
     rootMargin: '10px 0px',
-    threshold: 1,
+    threshold: 1, //PORCENTAJE MOSTRADO AL DOM [0,1];
   };
 
   constructor(private el: ElementRef, private cache:CacheService) {}
