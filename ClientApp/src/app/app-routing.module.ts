@@ -5,6 +5,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   //{ path: 'home', component: HomeComponent },
   { 
+    path: 'infinite', 
+    loadChildren: () => { 
+      return import('./components/infinite/infinite.module').then(m => m.InfiniteModule);
+    }
+  },
+  { 
     path: '', 
     loadChildren: () => { 
       return import('./components/home/home.module').then(m => m.HomeModule);

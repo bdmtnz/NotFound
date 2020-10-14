@@ -3,7 +3,7 @@ import { Directive, ElementRef, EventEmitter, Input, OnInit, OnDestroy, Output }
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import {fromIntersectionObserver, IntersectionStatus} from './form-intersection-observer';
+import { fromIntersectionObserver, IntersectionStatus } from './form-intersection-observer';
 
 @Directive({
   selector: '[intersectionObserver]'
@@ -27,7 +27,7 @@ export class IntersectionObserverDirective implements OnInit, OnDestroy {
       rootMargin: this.intersectionRootMargin,
       threshold: this.intersectionThreshold
     };
-
+    
     fromIntersectionObserver(
       element,
       config,

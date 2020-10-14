@@ -17,4 +17,8 @@ export class ApiService {
     return this.http.get<any>('https://rickandmortyapi.com/api/character/');
   }
 
+  getNext(next:string):Observable<any>{
+    return this.http.get<any>(next);
+  }
+
 }
