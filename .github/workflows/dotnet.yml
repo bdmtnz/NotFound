@@ -37,4 +37,4 @@ jobs:
           node-version: 14
       - run: npm ci
       #- run: npm test
-      - run: nom run build
+      - run: npm run build
